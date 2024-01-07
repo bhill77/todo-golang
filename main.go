@@ -96,7 +96,7 @@ func main() {
 
 		result := db.First(&todo)
 		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
-			return c.Status(404).JSON("Data tidak ditemukan")
+			return c.Status(404).JSON("Invalid ID")
 		}
 
 		db.Delete(&todo)
